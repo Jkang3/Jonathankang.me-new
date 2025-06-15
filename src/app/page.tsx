@@ -11,12 +11,14 @@ export default function HomePage() {
   const viewRef = useRef<HTMLDivElement>(null);
   const [, scrollTo] = useWindowScroll();
 
+  const NAVBAR_HEIGHT = 80; // px
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const scrollToSection = (ratio: number) => {
-    const targetY = ratio * (viewRef.current?.offsetHeight || 0);
+    const targetY = ratio * (viewRef.current?.offsetHeight || 0) - NAVBAR_HEIGHT;
     scrollTo({ left: 0, top: targetY, behavior: "smooth" });
   };
 
@@ -136,8 +138,9 @@ export default function HomePage() {
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               date="2025 - Present"
-              iconStyle={{ background: '#fff', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              iconStyle={{ background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               icon={<img src="/meta.png" alt="Meta" className="h-7 w-10" />}
+              intersectionObserverProps={{ triggerOnce: false }}
             >
               <h3 className="vertical-timeline-element-title text-blue-400">Incoming Software Engineer</h3>
               <h4 className="vertical-timeline-element-subtitle text-blue-300">Meta (Threads Core Product)</h4>
@@ -149,8 +152,9 @@ export default function HomePage() {
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               date="May 2024 – Aug 2024"
-              iconStyle={{ background: '#fff', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              icon={<img src="/keysight.jpeg" alt="Keysight" className="h-11 w-11" />}
+              iconStyle={{ background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              icon={<img src="/keysight.png" alt="Keysight" className="h-12 w-12" />}
+              intersectionObserverProps={{ triggerOnce: false }}
             >
               <h3 className="vertical-timeline-element-title text-blue-400">Frontend Software Engineer Intern</h3>
               <h4 className="vertical-timeline-element-subtitle text-blue-300">Keysight Technologies, San Francisco, CA</h4>
@@ -162,8 +166,9 @@ export default function HomePage() {
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
               date="May 2023 – Aug 2023"
-              iconStyle={{ background: '#fff', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              icon={<img src="/multimedia.jpeg" alt="Multimedia" className="h-11 w-11" />}
+              iconStyle={{ background: '#2563eb', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              icon={<img src="/multimedia.png" alt="Multimedia" className="h-13 w-13" />}
+              intersectionObserverProps={{ triggerOnce: false }}
             >
               <h3 className="vertical-timeline-element-title text-blue-400">Frontend Software Engineer Intern</h3>
               <h4 className="vertical-timeline-element-subtitle text-blue-300">Multimedia, Atlanta, GA</h4>
