@@ -37,7 +37,7 @@ export default function HomePage() {
             src="mylogo.png" 
             alt="Logo" 
             className="h-16 cursor-pointer" 
-            onClick={() => window.location.reload()} 
+            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })} 
           />
           <div className="flex gap-8 items-center ml-auto mr-4">
             <button 
@@ -111,7 +111,6 @@ export default function HomePage() {
                   and building meaningful, user-centered products. Currently, I&apos;m excited to be joining Meta as an upcoming Software Engineer.
                 </p>
               </div>
-              
               <div className="space-y-4">
                 <p>
                   🏀 Outside of tech, you&apos;ll most likely find me on a court or a field — I love playing basketball, tennis, 
